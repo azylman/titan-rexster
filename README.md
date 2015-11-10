@@ -1,16 +1,11 @@
-# Docker Image for Titan Graph Database
+# Docker image for Titan graph database with DynamoDB backend
 
 Titan is a free, open source database that is capable of processing
 extremely large graphs and it supports a variety of indexing and storage backends,
 which makes it easier to extend than some popular NoSQL Graph databases.
 
-This docker image instantiaties a Titan graph database that is capable of
-integrating with an ElasticSearch container (Indexing) and a Cassandra container (Storage).
-
-The default distribution of Titan runs on a single node, so I thought it would be helpful
-if there was a modular way at runtime to hook up Titan to its dependencies.
-
-Enter Docker. Now it is possible to run Titan and it's dependencies in separate Docker containers.
+This docker image instantiaties a Titan graph database that integrates with DynamoDB as a storage
+backend.
 
 ## Titan
 
@@ -38,10 +33,14 @@ elegance to query graphs.
 The minimum system requirements for this stack is 1 GB with 2 cores.
 
 ```
-docker run -d --name es1 elasticsearch
-docker run -d --name cs1 cassandra
-docker run -d -P --name mytitan --link es1:elasticsearch --link cs1:cassandra apobbati/titan-rexster
+docker run image_name
 ```
+
+It requires four environment variables:
+  * **DYNAMODB_HOSTPORT** - where to access dynamo, e.g. https://dynamodb.us-west-1.amazonaws.com
+  * **AWS_ACCESS_KEY_ID**
+  * **AWS_SECRET_ACCESS_KEY**
+  * **GRAPH_NAME** - name of the graph
 
 ### Ports
 
@@ -58,21 +57,3 @@ To test out the REST API (over Boot2docker):
 ```
 curl http://localhost:<port-mapped-to-8182>/graphs/graph/vertices
 ```
-
-## Dependencies
-
-I've tested this container with the following containers:
-
-	- cassandra: This is the Cassandra Storage backend for Titan. It scales well for large datasets.
-	- elasticsearch: This is the ElasticSearch Indexing backend for Titan. It provides search
-		capabilities for Titan graph datasets.
-
-## Roadmap
-
-In the near future, I'd like to add support for:
-
-	- Scaling/Clustering Cassandra and ElasticSearch backends.
-	- External volumes for persistent data.
-	- Security between Titan and its backends.
-	- Example application stack integrating with Titan.
-
