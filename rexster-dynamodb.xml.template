@@ -102,7 +102,7 @@ https://github.com/thinkaurelius/titan/blob/0.5.4/titan-dist/src/assembly/resour
                 <!-- Amazon DynamoDB Storage Backend for Titan configuration -->
                 <storage.dynamodb.force-consistent-read>true</storage.dynamodb.force-consistent-read>
                 <!-- should be the graph name rexster/graphs/graph/graph-name -->
-                <storage.dynamodb.prefix>v054</storage.dynamodb.prefix>
+                <storage.dynamodb.prefix>_GRAPH_NAME_</storage.dynamodb.prefix>
                 <storage.dynamodb.metrics-prefix>d</storage.dynamodb.metrics-prefix>
                 <storage.dynamodb.enable-parallel-scans>false</storage.dynamodb.enable-parallel-scans>
                 <storage.dynamodb.max-self-throttled-retries>60</storage.dynamodb.max-self-throttled-retries>
