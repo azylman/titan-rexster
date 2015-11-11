@@ -136,15 +136,15 @@ https://github.com/thinkaurelius/titan/blob/0.5.4/titan-dist/src/assembly/resour
                      read and write capacity of the backend tables.-->
 
                 <storage.dynamodb.stores.edgestore.capacity-read>100</storage.dynamodb.stores.edgestore.capacity-read>
-                <storage.dynamodb.stores.edgestore.capacity-write>100</storage.dynamodb.stores.edgestore.capacity-write>
+                <storage.dynamodb.stores.edgestore.capacity-write>400</storage.dynamodb.stores.edgestore.capacity-write>
                 <storage.dynamodb.stores.edgestore.read-rate>100</storage.dynamodb.stores.edgestore.read-rate>
-                <storage.dynamodb.stores.edgestore.write-rate>100</storage.dynamodb.stores.edgestore.write-rate>
+                <storage.dynamodb.stores.edgestore.write-rate>400</storage.dynamodb.stores.edgestore.write-rate>
                 <storage.dynamodb.stores.edgestore.scan-limit>10000</storage.dynamodb.stores.edgestore.scan-limit>
 
                 <storage.dynamodb.stores.graphindex.capacity-read>100</storage.dynamodb.stores.graphindex.capacity-read>
-                <storage.dynamodb.stores.graphindex.capacity-write>100</storage.dynamodb.stores.graphindex.capacity-write>
+                <storage.dynamodb.stores.graphindex.capacity-write>400</storage.dynamodb.stores.graphindex.capacity-write>
                 <storage.dynamodb.stores.graphindex.read-rate>100</storage.dynamodb.stores.graphindex.read-rate>
-                <storage.dynamodb.stores.graphindex.write-rate>100</storage.dynamodb.stores.graphindex.write-rate>
+                <storage.dynamodb.stores.graphindex.write-rate>400</storage.dynamodb.stores.graphindex.write-rate>
                 <storage.dynamodb.stores.graphindex.scan-limit>10000</storage.dynamodb.stores.graphindex.scan-limit>
 
                 <storage.dynamodb.stores.systemlog.capacity-read>10</storage.dynamodb.stores.systemlog.capacity-read>
